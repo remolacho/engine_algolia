@@ -11,17 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43c85c60-7ce0-45a8-9b80-6463a0787647" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/category_product.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/algoliasearch.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/initializers/pager_api.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20201010012928_create_products.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20201010012938_create_categories.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20201010013008_create_category_products.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +158,24 @@
       <workItem from="1602616953137" duration="21926000" />
       <workItem from="1602685533215" duration="4083000" />
       <workItem from="1602694227886" duration="1078000" />
+      <workItem from="1602705765588" duration="13835000" />
+      <workItem from="1602764675694" duration="599000" />
     </task>
+    <task id="LOCAL-00001" summary="mi primer commit">
+      <created>1602720248408</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602720248408</updated>
+    </task>
+    <task id="LOCAL-00002" summary="mi primer commit">
+      <created>1602729225562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602729225562</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +192,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mi primer commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="mi primer commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="154" width="426" height="479" key="FileChooserDialogImpl" timestamp="1602617669781">
