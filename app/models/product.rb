@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   has_many :category_products, dependent: :delete_all
   has_many :categories, through: :category_products
 
+  accepts_nested_attributes_for :categories
+
   algoliasearch per_environment: true do
     attribute :id
     attribute :title

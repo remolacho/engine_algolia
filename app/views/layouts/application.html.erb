@@ -4,7 +4,9 @@
     <title>EngineAlgolia</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,3 +15,35 @@
     <%= yield %>
   </body>
 </html>
+<script>
+    $( document ).ready(function() {
+        $( "#products-search" ).keyup(function() {
+            $("#products-search").autocomplete({
+                source: '/products/searches?search=' + $( "#products-search" ).val(),
+                minLength : 5});
+        });
+
+        $( "#search-categories" ).click(function() {
+           var url = '/products/searches_categories?search=' + $( "#products-search" ).val();
+
+           if($( "#products-search" ).val().length == 0){
+               alert('debes tener un titulo');
+               return;
+           }
+
+            $.ajax({
+                url: url,
+                success: function(result) {
+                    $('#similar-categories').append('<lu>')
+                    $.each(result, function( index, value ) {
+                        $('#similar-categories').append('<li>'+ value + '</li>')
+                    });
+                    $('#similar-categories').append('</lu>')
+                },
+                error: function() { alert('No se ha podido obtener la información');}
+            });
+        });
+
+
+    });
+</script>

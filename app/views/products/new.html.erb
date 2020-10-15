@@ -1,0 +1,27 @@
+<%= simple_form_for @product do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, id: 'products-search'%>
+  </div>
+  <br>
+  <div>
+    <%= link_to 'categorias recomendadas', '#similar-categories', id: 'search-categories' %>
+  </div>
+  <div id="similar-categories"></div>
+  <br>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price, type: :number %>
+  </div>
+  <br>
+  <div>
+    <%= f.association :categories %>
+  </div>
+  <br>
+  <%= f.button :submit %>
+<% end %>

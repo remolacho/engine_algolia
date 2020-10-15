@@ -11,7 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43c85c60-7ce0-45a8-9b80-6463a0787647" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/products/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/engine_algolia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/engine_algolia.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +167,7 @@
       <workItem from="1602685533215" duration="4083000" />
       <workItem from="1602694227886" duration="1078000" />
       <workItem from="1602705765588" duration="13835000" />
-      <workItem from="1602764675694" duration="599000" />
+      <workItem from="1602764675694" duration="2556000" />
     </task>
     <task id="LOCAL-00001" summary="mi primer commit">
       <created>1602720248408</created>
@@ -202,9 +210,9 @@
       <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="466" y="154" width="426" height="479" key="FileChooserDialogImpl/0.25.1366.743@0.25.1366.743" timestamp="1602617669781" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602628157402">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602767356292">
       <screen x="0" y="25" width="1366" height="743" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.25.1366.743@0.25.1366.743" timestamp="1602628157402" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.25.1366.743@0.25.1366.743" timestamp="1602767356292" />
   </component>
 </project>

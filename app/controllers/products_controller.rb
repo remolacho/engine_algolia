@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  # products_index GET|POST
   def index
     @term = params[:search]
     @products = if params[:category].present?
@@ -13,6 +14,48 @@ class ProductsController < ApplicationController
 
     @categories = group_categories
     @range_prices = group_price
+  end
+
+  # searches_products
+  # GET      /products/searches
+  def searches
+    @term = params[:search]
+    render json: autocomplete.map(&:title)
+  end
+
+  def searches_categories
+    @term = params[:search]
+    render json: similar_categories
+  end
+
+  # new_products
+  def new
+    @product = Product.new
+  end
+
+  # products
+  def create
+    @product = Product.new(allowed_params)
+    @product.save
+    redirect_to products_index_url
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(allowed_params)
+    redirect_to products_index_url
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.active = false
+    @product.is_deleted = true
+    @product.save
+    redirect_to products_index_url
   end
 
   private
@@ -63,6 +106,23 @@ class ProductsController < ApplicationController
                        facets: %w[categories price])
   end
 
+  def autocomplete
+    Product.search(@term,
+                   tagFilters: %w[is_deleted_false active_true],
+                   page: 1)
+  end
+
+  def similar_categories
+    result = Product.search('', similarQuery: @term,
+                            tagFilters: %w[is_deleted_false active_true],
+                            page: 1,
+                            facets: %w[categories])
+
+    return [] unless result.present?
+
+    result.facets['categories'].sort_by{ |k,v| -v }.map{ |value| value[0] }
+  end
+
   def by_range_price
     price_str = params[:range_price].gsub('-', 'TO')
     price_to = "price:#{price_str}"
@@ -75,4 +135,7 @@ class ProductsController < ApplicationController
                 facets: %w[categories price])
   end
 
+  def allowed_params
+    params.require(:product).permit!
+  end
 end

@@ -1,0 +1,15 @@
+<%= simple_form_for @product , url: product_path(@product.id), method: :put  do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, id: 'products-search'%>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :price %>
+  <%= f.number_field :price, type: :number %>
+  <br>
+  <%= f.label :categories %>
+  <%= f.association :categories %>
+  <br>
+  <%= f.button :submit %>
+<% end %>

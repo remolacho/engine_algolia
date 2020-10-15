@@ -1,13 +1,13 @@
-<h1>Products#index</h1>
+<h1>Productos</h1>
 <%= form_tag products_index_path, :method => :post do %>
   <p>
-    <%= text_field_tag :search, @term %>
+    <%= text_field_tag :search, @term, id: 'products-search' %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-<% if @products.present? %>
-  <h1>Productos</h1>
+<%= link_to 'Nuevo', new_product_path %>
 
+<% if @products.present? %>
   <%# if @products&.suggestions.present? %>
     <p>quiso decir: <b><%#= @products.suggestions.join(',')  %></b></p>
   <%# end %>
@@ -24,6 +24,8 @@
     <th>Descripcion</th>
     <th>Categoria</th>
     <th></th>
+    <th></th>
+    <th></th>
   </thead>
   <tbody>
      <% @products.each do |pro| %>
@@ -34,6 +36,8 @@
           <td><%= (pro.highlight_result['description']['value'] || pro.description).html_safe %></td>
           <td><%= pro.categories.map(&:name) %></td>
           <td><%= link_to 'similares', products_index_path(product_id: pro.id) %></td>
+          <td><%= link_to 'editar', edit_product_path(pro.id) %></td>
+          <td><%= link_to 'eliminar', product_path(pro.id), method: :delete %></td>
         </tr>
      <% end %>
   </tbody>
@@ -95,3 +99,13 @@
   <% end %>
 
 <% end %>
+
+<script>
+    $( document ).ready(function() {
+        $( "#products-search" ).keyup(function() {
+            $("#products-search").autocomplete({
+                source: '/products/searches?search=' + $( "#products-search" ).val(),
+                minLength : 5});
+        });
+    });
+</script>
